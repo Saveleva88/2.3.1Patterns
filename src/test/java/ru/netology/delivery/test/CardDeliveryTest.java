@@ -21,8 +21,8 @@ public class CardDeliveryTest {
 
         RegistrationByCardInfo firstSending = DataGenerator.Registration.generateByCard("ru");
 
-        String firstDate = generateDate(10);
-        String secondDate = generateDate(20);
+        String firstDate = generateDate(7);
+        String secondDate = generateDate(11);
 
         // firstSending
 
@@ -57,6 +57,7 @@ public class CardDeliveryTest {
         $("[data-test-id='replan-notification'] .notification__content")
                 .shouldBe(visible).shouldHave(text("У вас уже запланирована встреча на другую дату. Перепланировать?"));
     }
+
     public static String generateDate(int days) {
         return LocalDate.now().plusDays(days).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     }
